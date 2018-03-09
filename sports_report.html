@@ -6,6 +6,12 @@
     <title>The AHS Sports Report</title>
   </head>
   <style>
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
     body {
       background-color: #4242ce;
     }
@@ -38,39 +44,43 @@
     }
 
   </style>
-  </head>
 
   <body>
 
-    <h1>
-      <font face="times new roman">The AHS Report</font>
-    </h1>
+    <div class="clearfix">
 
-    <hr> &emsp;
 
-    <nav>
-      <table style="width:50%">
-        <tr>
-          <th><a href="#NHL">NHL Story</a></th>
-          <th><a href="#NBA">NBA Story</a></th>
-          <th><a href="#NFL">NFL Story</a></th>
-      </table>
-    </nav>
 
-    &emsp;
+      <h1>
+        <font face="times new roman">The AHS Report</font>
+      </h1>
 
-    <hr>
+      <hr> &emsp;
 
-    <div id="NHL">
-      <h1><strong>NHL Story</strong></h1>
-      <h2 id="poile">Nashville Predators General Manager David Poile Sets New NHL Record for Wins by a GM</h2>
-    </div>
-    <div id="nhlarticle">
-      <p class="paragraph">Nashville Predators GM David Poile becomes the winningest General Manager in NHL history, after his team beat the Edmonton Oilers 4-2, passing Glen Sather who held the top spot. Poile has been an NHL GM for quite the long time. He first began his
-        career with the Washington Capitals in 1982, before becoming the GM of the new expansion Nashville Predators. His knack for making good hockey trades, use of analytics,<img src="https://assets4.sportsnet.ca/wp-content/uploads/2017/05/david-poile.jpg"
-          width="450" length="500" align="right"> and mastery of negotiating, makes it simple to figure out why his teams barely miss the playoffs. Recent examples of his fine work include; working a 3 way trade for Kyle Turris to bolster their already
-        deep center pool, and trading away defensive superstar and captain Shea Weber, for fellow superstar blueliner and 2012-13 James Norris Trophy Winner, P.K. Subban. Poile hopes to complete his now Hall of Fame worthy career by winning the Stanley
-        Cup with the already formidable Nashville Predators.</p>
+      <nav>
+        <table style="width:50%">
+          <tr>
+            <th><a href="#NHL">NHL Story</a></th>
+            <th><a href="#NBA">NBA Story</a></th>
+            <th><a href="#NFL">NFL Story</a></th>
+        </table>
+      </nav>
+
+      &emsp;
+
+      <hr>
+
+      <div id="NHL">
+        <h1><strong>NHL Story</strong></h1>
+        <h2 id="poile">Nashville Predators General Manager David Poile Sets New NHL Record for Wins by a GM</h2>
+      </div>
+      <div id="nhlarticle">
+        <p class="paragraph">Nashville Predators GM David Poile becomes the winningest General Manager in NHL history, after his team beat the Edmonton Oilers 4-2, passing Glen Sather who held the top spot. Poile has been an NHL GM for quite the long time. He first began
+          his career with the Washington Capitals in 1982, before becoming the GM of the new expansion Nashville Predators. His knack for making good hockey trades, use of analytics,<img src="https://assets4.sportsnet.ca/wp-content/uploads/2017/05/david-poile.jpg"
+            width="450" length="500" align="right"> and mastery of negotiating, makes it simple to figure out why his teams barely miss the playoffs. Recent examples of his fine work include; working a 3 way trade for Kyle Turris to bolster their already
+          deep center pool, and trading away defensive superstar and captain Shea Weber, for fellow superstar blueliner and 2012-13 James Norris Trophy Winner, P.K. Subban. Poile hopes to complete his now Hall of Fame worthy career by winning the Stanley
+          Cup with the already formidable Nashville Predators.</p>
+      </div>
 
       <br>
 
@@ -81,21 +91,24 @@
           Bryant, who won "Best Short Film (Animated)," based his now Oscar-winning film "Dear Basketball," off a poem before he announced his retirement in 2015. Bryant worked alongside Star Wars composer John Williams and animated/directed by arist
           Glen Keane. Bryant, a 5-time NBA Champion, 2-time NBA Finals MVP, 2008 NBA MVP, becomes the first ever NBA player to win an Academy Award. The 39-year old legend is still making a case for being the GOAT (Greatest of all time), and is gaining
           acknowledgement from fellow NBA legends such as Lebron James, and former superstar teammate Shaquille O'Neal.</p>
+      </div>
 
-        &emsp;
+      &emsp;
 
-        <div id="NFL">
-          <h1><strong>NFL Story</strong></h1>
-          <h2 id="shaquem">Shaquem Griffin Continues to Defy the Odds</h2>
-          <img src="https://images.wsj.net/im-3136?width=620&aspect_ratio=1.5" width="500" length="650">
-          <p class="paragraph">Despite amniotic band syndrome, a rare condtion which occurs during fetal development, Shaquem Griffin never gave up on his dreams of becoming an NFL player. The condition causes severe pain to the limb, since Griffin's left hand could not function
-            properly. His had was amputated after the pain reached a point that Griffin took it upon himself to cut off his own hand, and his mother took him to the hospital after a night of agony, which led to his left hand being amputated. Griffin continued
-            on to be one of the best linebackers in college for the University of Central Florida, and posted a breathtaking statline at the NFL's annual combine for future draftees. These numbers include having the best 40-yard dash for a linebacker
-            since 2003, and going for 20 reps on a weight that he only posted 11 for, on top of that, he used a prosthetic hand to grip the bar, and required more strength in his left arm. This story shows that dedication, hard work, and a burning passion
-            for the thing you love, is all you need to succeed, a truly inspiring story for the kids in our world that give up on their futures because they have similar problems as him, and he proved that you can still chase your dreams no matter what
-            stands in your way. </p>
+      <div id="NFL">
+        <h1><strong>NFL Story</strong></h1>
+        <h2 id="shaquem">Shaquem Griffin Continues to Defy the Odds</h2>
+        <img src="https://images.wsj.net/im-3136?width=620&aspect_ratio=1.5" width="500" length="650">
+        <p class="paragraph">Despite amniotic band syndrome, a rare condtion which occurs during fetal development, Shaquem Griffin never gave up on his dreams of becoming an NFL player. The condition causes severe pain to the limb, since Griffin's left hand could not function
+          properly. His had was amputated after the pain reached a point that Griffin took it upon himself to cut off his own hand, and his mother took him to the hospital after a night of agony, which led to his left hand being amputated. Griffin continued
+          on to be one of the best linebackers in college for the University of Central Florida, and posted a breathtaking statline at the NFL's annual combine for future draftees. These numbers include having the best 40-yard dash for a linebacker since
+          2003, and going for 20 reps on a weight that he only posted 11 for, on top of that, he used a prosthetic hand to grip the bar, and required more strength in his left arm. This story shows that dedication, hard work, and a burning passion for
+          the thing you love, is all you need to succeed, a truly inspiring story for the kids in our world that give up on their futures because they have similar problems as him, and he proved that you can still chase your dreams no matter what stands
+          in your way. </p>
+      </div>
 
-
+    </div>
   </body>
 
 </html>
+
