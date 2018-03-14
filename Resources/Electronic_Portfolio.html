@@ -9,7 +9,16 @@
     <style>
       a:link {
         background-color: transparent;
-        color: blue:
+        text-decoration: none;
+        color: #0276FD;
+      }
+
+      a:hover {
+        color: #0276FD;
+      }
+
+      a:active {
+        color: #0276FD;
       }
 
       h1 {
@@ -20,18 +29,27 @@
       }
 
       .button {
-        font-size: 30px;
-        color: black;
         position: relative;
-        background-color: #79CDCD;
-        border: 4px solid black;
-        padding: 15px 15px;
-        text-align: right;
+        padding: 15px 25px;
+        font-size: 26px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #009ACD;
+        background-color: #B2DFEE;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 9px;
       }
-      
-      #intro {
-        font-size: 30px;
-        color: #008B8B;
+
+      .button:hover {
+        background-color: #0276FD;
+      }
+
+      .button:active {
+        background-color: #0276FD;
+        box-shadow: 5px;
+        transform: translateY(8px);
       }
 
     </style>
@@ -39,30 +57,31 @@
 
   <body>
     <center>
-      <h1>Arjun's Electronic Portfolio</h1>
+      <h1><img src="https://i.pinimg.com/originals/ec/80/7c/ec807c92766591ff15f84f7ef2f5381e.png" length="100" width="100">Arjun's Electronic Portfolio<img src="https://i.pinimg.com/originals/ec/80/7c/ec807c92766591ff15f84f7ef2f5381e.png" length="100" width="100"></h1>
     </center>
-    <center><p id="intro">Welcome to my Electronic Portfolio!</p></center>
+
     <ul>
-      <center><button class="button">Accomplishments</button></center>
+      <center><button class="button"><a href="https://ashokar16.github.io/Resources/Accomplishments.html">Accomplishments</a></button></center>
 
       &emsp;
 
-      <center><button class="button">Experience</button></center>
+      <center><button class="button"><a href="https://ashokar16.github.io/Resources/Experience.html">Experience</a></button></center>
 
       &emsp;
 
-      <center><button class="button">Academic History</button></center>
+      <center><button class="button"><a href="https://ashokar16.github.io/Resources/Academic_History.html">Academic History</a></button></center>
 
       &emsp;
 
-      <center><button class="button">Contact Info</button></center>
+      <center><button class="button"><a href="https://ashokar16.github.io/Resources/Contact_Info.html">Contact Info</a></button></center>
 
       &emsp;
 
-      <center><button class="button">Fun Facts</button></center>
-
+      <center><button class="button"><a href="https://ashokar16.github.io/Resources/Fun_Facts.html">Fun Facts</a></button></center>
+    </ul>
 
   </body>
 
-</html>
 
+
+</html>
