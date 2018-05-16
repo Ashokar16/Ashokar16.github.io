@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-      <script>
-function getUserChoice() {
+<script>
+
+    function getUserChoice() {
       var userInput = prompt("Do you choose rock, paper, scissors, lizard or spock?");
       userInput = userInput.toLowerCase();
       if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "bomb" || userInput === "lizard" || userInput === "spock" || userInput === "bomb") {
@@ -148,5 +149,5 @@ function getUserChoice() {
       document.write("The result: " + determineWinner(userChoice, computerChoice));
     }
     playGame();
-      </script>
-</html>
+    </script>
+    </html>
