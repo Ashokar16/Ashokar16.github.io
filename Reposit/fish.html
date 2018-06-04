@@ -99,7 +99,54 @@
       font-size: 15px;
     }
     
-
+     a,
+    a:visited,
+    a:hover,
+    a:active {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: relative;
+      transition: 0.5s color ease;
+      text-decoration: none;
+      color: black;
+      font-size: 2.0em;
+      padding: 20px;
+    }
+    a:hover {
+      color: lightgreen;
+    }
+    a.before:before,
+    a.after:after {
+      content: "";
+      transition: 0.5s all ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+    }
+    a.before:before {
+      top: -0.25em;
+    }
+    a.after:after {
+      bottom: 0.25em;
+    }
+    a.before:before,
+    a.after:after {
+      height: 5px;
+      height: 0.35rem;
+      width: 0;
+      background: #FFD6A0;
+    }
+    a.third:after,
+    a.sixth:before,
+    a.sixth:after {
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+    a.before:hover:before,
+    a.after:hover:after {
+      width: 100%;
+    }
   </style>
 
 
@@ -168,5 +215,5 @@ blood is slow and some parts of the fish may receive a limited amount of oxygen.
   </body>
 
 
-
 </html>
+
