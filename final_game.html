@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Adventure</title>
+  </head>
+  <style>
+  body {
+    background-color: maroon;
+  }
+  
+  </style>
+
+  <body>
+    <h1>
+      <center>Enver Creek Escape</center>
+    </h1>
+    <center>
+    <button onclick="startGame()">Start Game</button>
+    </center>
+    <script>let items = [];
+
+start();
+
+function start() {
+  var ready = prompt('Are you ready? (Yes or No)').toUpperCase();
+  if (ready === 'YES') {
+    alert('Warning: There is a lot of text.');
+    newGame();
+    alert('Restart the game once you are ready to play.');
+  }
+}
+
+function newGame() {
+  alert("You find yourself in the Lost N' Found Box, and as soon as you get out, you see the logo of the Enver Secondary School, and you still dont know why you're here, but as soon as you get out of the box, you hear the speaker system beep.");
+  alert("Hey we actually got him, haha, what a fool...hey buddy, I'm gonna leave so have fun ok?");
+  passageChoice()
+}
+
+function passageChoice() {
+  var wakinUp = prompt('Which hall will you enter? (Your options are Art Hall, Science Hall, English Hall, Socials Hall, AND Gymnasium)').toUpperCase();
+  switch (wakinUp) {
+    case 'ART HALL':
+      alert('You entered the Art Hall.');
+      artHall();
+      break;
+    case 'ENGLISH HALL':
+      alert('You head up the stairs to go to the English Hall.');
+      englishStairs();
+      break;
+    case 'SCIENCE HALL':
+      alert('You entered the Science Hall.');
+      alert('Upon entering the Science Hall, you smell a scent like a rotten egg.');
+      alert("When inspecting the scent you noticed one of the chemistry teacher's room was open, and you proceed inside");
+      chemistryRoom();
+      break;
+    case 'SOCIALS HALL':
+      alert('You entered the Socials Hall.');
+      alert("You try to enter the first room you see, but you end up.")
+      socialsHall();
+      break;
+    case 'Gymnasium':
+      alert('You went inside the gym.');
+      gymnasium();
+      break;
+    default:
+      alert('Make sure you typed it down properly');
+      newGame();
+  }
+}
+
+function artHall() {
+  var paintBoy = prompt('When you enter the hall, you see the many paintings, but you notice that the paintings have "HUNDEEZ DUNDEEZ" scribbled all over them. Will you continue? (Yes or No?)').toUpperCase();
+  if (paintBoy === 'YES') {
+    alert('You continue down the hall to find that "HUNDEEZ DUNDEEZ" is now scribbled everywhere around, on the floor, ceiling, walls, and you hear a voice call out:');
+    alert('Yoo hundeez dundeez');
+    artHallSituation();
+  }
+  if (paintBoy === 'NO') {
+    alert('You return to the beginning, but as you leave you notice a low growl and can barely make out "Dats right you bundha"');
+    newGame();
+  } else {
+    alert('My intelligence is not that great.');
+    artHall();
+  }
+}
+
+function artHallSituation() {
+  var jackSolve = prompt('The wild Surrey jack continues his long walk towards you, and appears to have a weapon in his hand, you see that there is a long paint brush, will you pick up the paint brush?(Yes or No?)').toUpperCase()
+  if (jackSolve === 'NO') {
+
+  }
+  if (jackSolve === 'YES') {
+    items.push('Paintbrush');
+    var choiceJackArt = prompt('You picked up the brush, will you attack the jack or leave the hallway? (Attack or Leave)').toUpperCase()
+    if (choiceJackArt === 'ATTACK')
+      attackJackArt();
+  } else {
+    alert('You manage to beat him in a foot race back to the quad, and he gives up chasing you, and you return back to the quad safely.')
+  }
+
+}
+
+function attackJackArt() {
+  alert('"So you gonna attack now huh?! CMON BUDDY LETS SCRAP IT OUT"')
+  alert('Your only weapon right now is the paintbrush lying between your fingertips, and you attack him with all your might, which ends up breaking into 2 pieces')
+  alert('He overpowers you and you end up blacking out....')
+  newGame();
+}
+
+function chemistryRoom() {
+  alert("You enter the foul smelling room, and see a broken beaker, and you find a piece of paper that states the Lab the class was performing, as they were creating compounds such as Sulfur Dioxide, which explains the smell, but also that they were making Batrachotoxin, the most potent poison known")
+  alert("'Why in the hell would a teacher make their students make this??? Especially in a school like this'")
+  alert("You see there are keys lying at the very back desk of the classroom, you try to walk forward, but you find yourself stumped by the chemicals that are spilled everywhere.")
+  var waterFloor = prompt("'Damn, I could really use a hazmat suit right now to walk across this'").toUpperCase()
+  if (waterFloor === 'PICK UP KEYS') {
+    alert('You decide "Why not eh" and decide to walk on the chemicals, which actually turns out to be water on the floor.')
+    alert('You walk across the classroom to pick up the set of keys on the floor.')
+    items.push('Keys')
+  } else {
+    alert("You find that you are too scared to try and get the keys and decide to go back")
+    passageChoice();
+  }
+}
+
+function englishStairs() {
+  alert('You find yourself at the top of the stairs, in front of room 218, the english hall entrance, and the room that runs the internet.')
+  var englishStairChoice = prompt('Where are you heading? (218, English Hall, Internet Room )').toUpperCase()
+  if (englishStairChoice === '218') {
+    alert('You head into Room 218')
+    room218();
+  }
+
+  if (englishStairChoice === 'ENGLISH HALL') {
+    alert('You continue on your journey into the english hall')
+    englishHall();
+  }
+
+  if (englishStairChoice === 'INTERNET ROOM') {
+    alert("You were always intrigued by what is inside the room, so you go towards the internet room")
+    internetRoom();
+  }
+}
+
+function room218() {
+  alert('You go inside the room, which is completely pitch black, you try to continue in, but you bust your bum as soon as you try walking around. You turn around and head back to the stairs, as it seems this is just an empty room.')
+  englishStairs();
+}
+
+function englishHall() {
+  alert('You enter the English Hall and begin to walk down slowly, and you feel as if somebody is watching you');
+  alert('You walk down to the end, and you realize that Mr. VTop is standing at the end of the hall, giving you a glare of great distaste.');
+  alert('He speaks out to you:');
+  alert("Young issue, i shalt grant thee access to the lock'd doth'r in the socials wing yond thee so desp'rately wanteth to ope. But, thee has't to answ'r 3 riddles in a row. I shalt giveth thee the first riddle anon:");
+  var riddleOne = prompt('What hast hands but can not clapeth?("A _______")').toUpperCase()
+  switch (riddleOne) {
+    case 'A CLOCK':
+    alert("Valorous job, thee've did solve the first riddle, anon t only gets hard'r from anon on");
+    riddle2();
+    break;
+    default:
+    alert("Wow thou art dumb, naw thee ain't getting the passw'rd anon aft'r yond no more brain than stone answ'r");
+    englishHall();
+  }
+}
+
+function riddle2() {
+	alert("So thee has't anon did solve the first riddle, but thee still needeth 2 in a row to taketh a clue to thy escapeth, and i shalt presenteth thee with the 2nd riddle")
+  var riddleTwo = prompt("What belongs to thee, but oth'rs useth t m're").toUpperCase()
+  switch (riddleTwo) {
+    case 'YOUR NAME':
+    alert("Valorous job, thee've did solve the 2nd riddle, anon thee only needeth to solveth the 3rd, and hardest riddle hehe");
+    riddle3();
+    break;
+    default:
+    alert("Ooooh,you did get yond one wrong eh, so closeth yet so far, cometh backeth next timeth!");
+    englishHall();
+    }
+}
+
+function riddle3() {
+	alert("So thee has't anon did solve the first riddle, but thee still needeth 2 in a row to taketh a clue to thy escapeth, and i shalt presenteth thee with the 2nd riddle")
+  var riddleThree = prompt("I am rarely did touch but oft did hold, and if 't be true thou art cunning thee'll useth me well. What am i?(A _____)").toUpperCase()
+  switch (riddleThree) {
+    case 'A TONGUE':
+    alert("Noooooo how has't i just alloweth thee winneth");
+    riddle3();
+    break;
+    default:
+    alert("Hahaha, thee hath lost, thou art not getting mine own password hehe");
+    englishHall();
+    }
+}
+  
+</script>
+  </body>
+
+</html>
