@@ -6,9 +6,31 @@
   </head>
   <style>
   body {
-    background-color: maroon;
+    background-image: url("http://3.bp.blogspot.com/-fRscKLhq6Bg/USAtuW2EQdI/AAAAAAAAAJw/ieKhlJAp9n8/s1600/Enver+Creek+from+Sky-7.jpeg");
+height: auto;
+width: auto;
+background-size: cover;
   }
   
+  button {
+color: #fff !important;
+text-transform: uppercase;
+background: #ed3330;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+}
+
+button:hover {
+background: #434343;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+}
+
   </style>
 
   <body>
@@ -16,34 +38,41 @@
       <center>Enver Creek Escape</center>
     </h1>
     <center>
-    <button onclick="startGame()">Start Game</button>
+    <button onclick="start();">Start Game</button>
     </center>
-    <script>let items = [];
+    <script>
+    
 
-start();
 
 function start() {
   var ready = prompt('Are you ready? (Yes or No)').toUpperCase();
   if (ready === 'YES') {
-    alert('Warning: There is a lot of text.');
     newGame();
     alert('Restart the game once you are ready to play.');
+  } else if (ready === 'NO') {
+    alert('Ok');
+    start();
+  } else {
+    alert('Please type in Yes or No');
+    start();
   }
 }
 
 function newGame() {
   alert("You find yourself in the Lost N' Found Box, and as soon as you get out, you see the logo of the Enver Secondary School, and you still dont know why you're here, but as soon as you get out of the box, you hear the speaker system beep.");
   alert("Hey we actually got him, haha, what a fool...hey buddy, I'm gonna leave so have fun ok?");
-  passageChoice()
+  locker();
+}
+
+function locker() {
+  alert('"I should check out my locker and TAG, maybe somebody could be in there? I think it was in the Art Hall... "');
+  alert('You go to the art hallway first to check some stuff out');
+  artHall();
 }
 
 function passageChoice() {
-  var wakinUp = prompt('Which hall will you enter? (Your options are Art Hall, Science Hall, English Hall, Socials Hall, AND Gymnasium)').toUpperCase();
-  switch (wakinUp) {
-    case 'ART HALL':
-      alert('You entered the Art Hall.');
-      artHall();
-      break;
+  var choice = prompt('Which hall will you enter? Most of them are closed or barricaded for some reason. (Your options are the Science Hall, English Hall, AND Gymnasium)').toUpperCase();
+  switch (choice) {
     case 'ENGLISH HALL':
       alert('You head up the stairs to go to the English Hall.');
       englishStairs();
@@ -54,12 +83,7 @@ function passageChoice() {
       alert("When inspecting the scent you noticed one of the chemistry teacher's room was open, and you proceed inside");
       chemistryRoom();
       break;
-    case 'SOCIALS HALL':
-      alert('You entered the Socials Hall.');
-      alert("You try to enter the first room you see, but you end up.")
-      socialsHall();
-      break;
-    case 'Gymnasium':
+    case 'GYMNASIUM':
       alert('You went inside the gym.');
       gymnasium();
       break;
@@ -69,81 +93,138 @@ function passageChoice() {
   }
 }
 
+function socialWall() {
+  alert('You try to find where the sound came from, and it came from the barricaded Socials Hallway, apparently the wall collapsed!');
+  alert('You peer through the window of the first class you see, and you see that there is a shattered window that could allow you to escape.');
+  alert("You try the door, but you see that there is a device that keeps the door shut until you get the code right");
+  var willYouAnswer = prompt('Will you attempt to answer? (Yes or No?)').toUpperCase();
+  if (willYouAnswer === 'YES') {
+    attemptCode();
+  }
+  if (willYouAnswer === 'NO') {
+    alert('You try playing around with the device and you end up nearly blowing yourself up, so you just say "screw it" and leave to go back to the quad.')
+    passageChoice();
+  }
+
+}
+
+function attemptCode() {
+  var answerCode = prompt('Type in the code to unlock the door, remember, you only get one try at this.')
+  if (answerCode === '06088797') {
+    alert('The device returns: HOLY MOLY YOU GOT IT, I GOTTA LET YOU GO MAN');
+    escapePlan();
+  } else {
+    alert('Oops, you got it wrong, better luck next time, gotta send you home bud');
+    alert('You are magically lifted up and brought into the quad as if a supernatural entity just performed some hoopity stuff.')
+    passageChoice();
+  }
+}
+
+function escapePlan() {
+  alert("You're so close to escaping the school!, you just need to bypass the windows on the side of the room.")
+  alert('You have your paintbrush, along with a baseball bat on the wall belonging to the teacher, and an box cutter blade, you can smash the window with the bat, cut the glass, or somehow use the dinky paintrbrush.')
+  var escapeUse = prompt("Will you use the ('BAT'), the ('BLADE'), or the ('PAINTBRUSH')").toUpperCase();
+  switch (escapeUse) {
+    case 'BAT':
+      alert('You hit the windows with the bat, smashing it to pieces, but the surrounding residents having a party on their porch hear and see you, they call the police.');
+      alert('You try explaining what just happened but the police respond with "Yeah yeah, tell that to the judge buddy," and you end up getting arrested and playing yourself hard.')
+      alert('game over btw')
+      newGame();
+    case 'BLADE':
+      alert('You try using the blade to cut the window, but the screeching sound alarms the hidden Surrey jacks within the school, who hunt and capture you, and stuff you in the garbage can, and you begin to wonder how you just merked yourself over.')
+      alert('game over btw')
+      newGame();
+      break;
+    case 'PAINTBRUSH':
+      escape();
+      break;
+    default:
+      alert('Make sure you typed it down properly');
+      escapePlan();
+}
+}
+
+function escape() {
+	alert('After wondering what to do, you begin playing around the window with the brush, especially the tiny bolts that the end of the brush can fit in.');
+  alert('You get a brain blast and start twisting the paintbrush, which begins loosening the bolt, soon you do this to every single bolt in the window frame and it unhinges silently, as nobody hears a thing.');
+  alert('You get out of the class and jump down from the second story into the bushes, luckily it broke your fall and you start running.');
+   alert('You pull out your phone and start dialing 911 once you get home safe.');
+   alert("HOLD UP, I HAD MY PHONE THIS ENTIRE TIME, I COULD'VE JUST CALLED THE POPO AND I WOULD'VE BEEN SAVED, I DID ALL THAT RIDDLE STUFF AND CHEMICAL WALKING FOR NOTHING.");
+   alert("In the end, you realize you're a complete idiot, but glad you are home safe.");
+   congrats();
+}
+
+function congrats() {
+alert("Congrats on beating the game and thank you for playing");
+alert("#DESPACITO3?");
+newGame();
+}
+
 function artHall() {
+  alert('You luckily remember where the hallway is, and walk towards it.')
   var paintBoy = prompt('When you enter the hall, you see the many paintings, but you notice that the paintings have "HUNDEEZ DUNDEEZ" scribbled all over them. Will you continue? (Yes or No?)').toUpperCase();
   if (paintBoy === 'YES') {
     alert('You continue down the hall to find that "HUNDEEZ DUNDEEZ" is now scribbled everywhere around, on the floor, ceiling, walls, and you hear a voice call out:');
     alert('Yoo hundeez dundeez');
     artHallSituation();
-  }
-  if (paintBoy === 'NO') {
-    alert('You return to the beginning, but as you leave you notice a low growl and can barely make out "Dats right you bundha"');
-    newGame();
+    if (paintBoy === 'NO') {
+      alert('You feel intimidated for some reason and run away to the quad');
+      passageChoice();
+    }
   } else {
-    alert('My intelligence is not that great.');
+    alert('Please type in yes or no');
     artHall();
   }
 }
 
+
 function artHallSituation() {
-  var jackSolve = prompt('The wild Surrey jack continues his long walk towards you, and appears to have a weapon in his hand, you see that there is a long paint brush, will you pick up the paint brush?(Yes or No?)').toUpperCase()
-  if (jackSolve === 'NO') {
-
-  }
-  if (jackSolve === 'YES') {
-    items.push('Paintbrush');
-    var choiceJackArt = prompt('You picked up the brush, will you attack the jack or leave the hallway? (Attack or Leave)').toUpperCase()
-    if (choiceJackArt === 'ATTACK')
-      attackJackArt();
-  } else {
-    alert('You manage to beat him in a foot race back to the quad, and he gives up chasing you, and you return back to the quad safely.')
-  }
-
+  alert('The wild Surrey jack continues his long walk towards you, and appears to have a weapon in his hand, you see that there is a long paint brush, which for some reason you pick up.')
+  alert('You run away from the conflict, and you hear the young jack yell out:')
+  alert('YO COME BACK HERE YOU NUT WE GOTTA SQUAD THIS BEEF YO HUNDEEZ.')
+  alert('You return to the quad where you now begin your escape plan, and you have some hallways at your disposal.')
+  passageChoice();
 }
 
-function attackJackArt() {
-  alert('"So you gonna attack now huh?! CMON BUDDY LETS SCRAP IT OUT"')
-  alert('Your only weapon right now is the paintbrush lying between your fingertips, and you attack him with all your might, which ends up breaking into 2 pieces')
-  alert('He overpowers you and you end up blacking out....')
-  newGame();
-}
+
 
 function chemistryRoom() {
   alert("You enter the foul smelling room, and see a broken beaker, and you find a piece of paper that states the Lab the class was performing, as they were creating compounds such as Sulfur Dioxide, which explains the smell, but also that they were making Batrachotoxin, the most potent poison known")
   alert("'Why in the hell would a teacher make their students make this??? Especially in a school like this'")
-  alert("You see there are keys lying at the very back desk of the classroom, you try to walk forward, but you find yourself stumped by the chemicals that are spilled everywhere.")
-  var waterFloor = prompt("'Damn, I could really use a hazmat suit right now to walk across this'").toUpperCase()
-  if (waterFloor === 'PICK UP KEYS') {
+  alert("You see there is a key that can be rotated positioned at the very back corner wall of the classroom, you try to walk forward, but you find yourself stumped by the chemicals that are spilled everywhere.");
+  var waterFloor = prompt("It honestly looks like water to me.... Will you walk across ('YES OR NO?')").toUpperCase();
+  if (waterFloor === 'YES') {
     alert('You decide "Why not eh" and decide to walk on the chemicals, which actually turns out to be water on the floor.')
-    alert('You walk across the classroom to pick up the set of keys on the floor.')
-    items.push('Keys')
-  } else {
-    alert("You find that you are too scared to try and get the keys and decide to go back")
+    alert('You walk across the classroom to to turn the keys clockwise, which ends up making nothing happen, until you hear a loud bang.')
+    socialWall();
+
+  } else if (waterFloor === "NO") {
+    alert("You find that you are too scared to try to go and turn the key and decide to go back");
     passageChoice();
+  } else {
+    alert("please type in one of the options");
+    chemistryRoom();
   }
 }
 
+
 function englishStairs() {
-  alert('You find yourself at the top of the stairs, in front of room 218, the english hall entrance, and the room that runs the internet.')
-  var englishStairChoice = prompt('Where are you heading? (218, English Hall, Internet Room )').toUpperCase()
+  alert('You find yourself at the top of the stairs, in front of room 218, the english hall entrance, and the room that runs the internet.');
+  var englishStairChoice = prompt('Where are you heading? (218 OR English Hall)').toUpperCase();
   if (englishStairChoice === '218') {
-    alert('You head into Room 218')
+    alert('You head into Room 218');
     room218();
   }
 
   if (englishStairChoice === 'ENGLISH HALL') {
-    alert('You continue on your journey into the english hall')
+    alert('You continue on your journey into the english hall');
     englishHall();
   }
 
-  if (englishStairChoice === 'INTERNET ROOM') {
-    alert("You were always intrigued by what is inside the room, so you go towards the internet room")
-    internetRoom();
-  }
 }
 
 function room218() {
-  alert('You go inside the room, which is completely pitch black, you try to continue in, but you bust your bum as soon as you try walking around. You turn around and head back to the stairs, as it seems this is just an empty room.')
+  alert('You go inside the room, which is completely pitch black, you try to continue in, but you bust your bum as soon as you try walking around. You turn around and head back to the stairs, as it seems this is just an empty room.');
   englishStairs();
 }
 
@@ -152,47 +233,60 @@ function englishHall() {
   alert('You walk down to the end, and you realize that Mr. VTop is standing at the end of the hall, giving you a glare of great distaste.');
   alert('He speaks out to you:');
   alert("Young issue, i shalt grant thee access to the lock'd doth'r in the socials wing yond thee so desp'rately wanteth to ope. But, thee has't to answ'r 3 riddles in a row. I shalt giveth thee the first riddle anon:");
-  var riddleOne = prompt('What hast hands but can not clapeth?("A _______")').toUpperCase()
+  var riddleOne = prompt('What hast hands but can not clapeth?("A _______")').toUpperCase();
   switch (riddleOne) {
     case 'A CLOCK':
-    alert("Valorous job, thee've did solve the first riddle, anon t only gets hard'r from anon on");
-    riddle2();
-    break;
+      alert("Valorous job, thee've did solve the first riddle, anon t only gets hard'r from anon on");
+      riddle2();
+      break;
     default:
-    alert("Wow thou art dumb, naw thee ain't getting the passw'rd anon aft'r yond no more brain than stone answ'r");
-    englishHall();
+      alert("Wow thou art dumb, naw thee ain't getting the passw'rd anon aft'r yond no more brain than stone answ'r");
+      englishHall();
   }
 }
 
 function riddle2() {
-	alert("So thee has't anon did solve the first riddle, but thee still needeth 2 in a row to taketh a clue to thy escapeth, and i shalt presenteth thee with the 2nd riddle")
-  var riddleTwo = prompt("What belongs to thee, but oth'rs useth t m're").toUpperCase()
+  alert("So thee has't anon did solve the first riddle, but thee still needeth 2 in a row to taketh a clue to thy escapeth, and i shalt presenteth thee with the 2nd riddle")
+  var riddleTwo = prompt("What belongs to thee, but oth'rs useth t m're").toUpperCase();
   switch (riddleTwo) {
     case 'YOUR NAME':
-    alert("Valorous job, thee've did solve the 2nd riddle, anon thee only needeth to solveth the 3rd, and hardest riddle hehe");
-    riddle3();
-    break;
+      alert("Valorous job, thee've did solve the 2nd riddle, anon thee only needeth to solveth the 3rd, and hardest riddle hehe");
+      riddle3();
+      break;
     default:
-    alert("Ooooh,you did get yond one wrong eh, so closeth yet so far, cometh backeth next timeth!");
-    englishHall();
-    }
+      alert("Ooooh,you did get yond one wrong eh, so closeth yet so far, cometh backeth next timeth!");
+      englishHall();
+  }
 }
 
 function riddle3() {
-	alert("So thee has't anon did solve the first riddle, but thee still needeth 2 in a row to taketh a clue to thy escapeth, and i shalt presenteth thee with the 2nd riddle")
-  var riddleThree = prompt("I am rarely did touch but oft did hold, and if 't be true thou art cunning thee'll useth me well. What am i?(A _____)").toUpperCase()
+  alert("So thee has't anon did solve the first riddle, but thee still needeth 2 in a row to taketh a clue to thy escapeth, and i shalt presenteth thee with the 2nd riddle")
+  var riddleThree = prompt("I am rarely did touch but oft did hold, and if 't be true thou art cunning thee'll useth me well. What am i?(A _____)").toUpperCase();
   switch (riddleThree) {
     case 'A TONGUE':
-    alert("Noooooo how has't i just alloweth thee winneth");
-    riddle3();
-    break;
+      alert("Noooooo how has't i just alloweth thee winneth");
+      alert("Alright, alright, I'll cut the act, here.... congrats on getting the password, its 06088797, you must remember that number.");
+      alert('You return to the quad feeling proud of yourself');
+      passageChoice();
+      break;
     default:
-    alert("Hahaha, thee hath lost, thou art not getting mine own password hehe");
-    englishHall();
-    }
+      alert("Hahaha, thee hath lost, thou art not getting mine own password hehe");
+      englishHall();
+  }
 }
-  
-</script>
-  </body>
 
+function gymnasium() {
+  alert('You enter the gymnasium to find the office open, and you go inside to see what is inside.');
+  alert("You find multiple scattered papers, gym equipment, and a total mess overall,but, you find Mr.Porpazcy's tape recorder laying on his desk.");
+  alert('"What kind of hoopity ancient technology is this" you say while trying to turn it on, but after a struggle with the ancient tech, you finally turn on the recorder and listen:');
+  alert("'I have no clue on what I'm doing here, there's a school dance going on and I'm still marking stuff, the kids have gone absolutely wild and I feel like the situation is out of control out there.''");
+  alert("'OH NO, THE KIDS JUST BROKE DOWN THE GYM DOORS, OH NO OH NO OH NO, I THINK SOMEBODY GOT STUFFED INTO THE LOST AND FOUND, WHATDOIDOWHATDOIDO.''");
+  alert("The tape scratches out and you finally realize what happened");
+  alert("You remember that you attended the school dance, and everybody went absolutely nuts after the DJ started throwing out light sticks, and you remember being stuffed in the box because you were one of the few people not acting crazy.");
+  alert("You realize that you need to get out and its been days since the dance, and you were locked in while the school was temporarily shut down for a week, not knowing you were stuck inside it's lost and found box.");
+  alert("You suddenly have the feeling that you need to get out of the school ASAP, and go back into the quad to continue your escape.");
+  passageChoice();
+}
+</script>
+</body>
 </html>
